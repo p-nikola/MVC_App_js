@@ -1,0 +1,124 @@
+﻿@model HospitalMVC.Models.Doctor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Doctor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            Hospital @Html.DisplayNameFor(model => model.Hospital.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospital.Name)
+        </dd>
+
+        <dt>
+            Hospital @Html.DisplayNameFor(model => model.Hospital.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospital.Adress)
+        </dd>
+        <dd>
+            <p>Пациенти</p>
+            @if (Model.Patients.Count <= 0)
+            {
+
+                <div>
+                    Нема пациенти
+                </div>
+            }
+            else
+            {
+
+                foreach (var item in Model.Patients)
+                {
+                    <ul>
+                        @Html.DisplayFor(modelItem => item.Name) (@Html.DisplayFor(modelItem => item.Age))
+                        @Html.ActionLink("Details", "DetailsPatient", "Patients", new { id = item.Id }, null)
+                        @Html.ActionLink("Remove", "DeletePatient", "Doctors", new { doctorId = Model.Id, patientId = item.Id },null)
+                        @*               @using (Html.BeginForm("DeletePatient", "Doctors"))
+                            {
+                                @Html.Hidden("doctorId", Model.Id)
+                                @Html.Hidden("patientId", item.Id)
+                                <button type="submit">Remove</button>
+                            }*@
+
+                    </ul>
+                }
+            }
+
+
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Insert a new patient", "InsertNewPatient", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+            $(".js-delete").on("click", function () {
+                var button = $(this);
+                var patientId = button.data("patient-id");
+                if (confirm("Are you sure you want to delete this patient?")) {
+                    $.ajax({
+                        url: "@Url.Action("DeletePatient", "Patients")",
+                        type: "POST",
+                        data: { id: patientId },
+                        success: function (response) {
+                            if (response.success) {
+                                // Remove the patient from the list
+                                button.closest("ul").remove();
+                                alert("Patient deleted successfully.");
+                            } else {
+                                alert(response.message);
+                            }
+                        },
+                        error: function () {
+                            alert("An error occurred while deleting the patient.");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+
+}
