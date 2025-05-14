@@ -115,6 +115,69 @@ namespace HospitalMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult AddDoctor(int id)
+        {
+            var hospital = db.Hospitals.Find(id);
+            if (hospital == null)
+            {
+                return HttpNotFound();
+            }
+
+            /*  var model = new AddDoctorViewModel
+              {
+                  HospitalId = id,
+                  Doctors = db.Doctors.Where(d => d.HospitalId == null).ToList()
+              };*/
+            var model = new AddDoctorViewModel();
+            model.HospitalId = id;
+            model.Doctors=db.Doctors.Where(d=>d.HospitalId==null).ToList();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddDoctor(AddDoctorViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var doctor = db.Doctors.Find(model.SelectedDoctorId);
+                if (doctor == null)
+                {
+                    return HttpNotFound();
+                }
+
+                doctor.HospitalId = model.HospitalId;
+                db.SaveChanges();
+
+                return RedirectToAction("Details", new { id = model.HospitalId });
+            }
+
+            model.Doctors = db.Doctors.Where(d => d.HospitalId == null).ToList();
+            return View(model);
+        }
+
+
+        public ActionResult RemoveDoctor(int? hospitalId, int? doctorId)
+        {
+            if (hospitalId == null || doctorId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var doctor = db.Doctors.Find(doctorId);
+            if (doctor == null)
+            {
+                return HttpNotFound();
+            }
+
+            // Dissociate the doctor from the hospital
+            doctor.HospitalId = null;
+            db.SaveChanges();
+
+            return RedirectToAction("Details", new { id = hospitalId });
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -28,6 +28,7 @@
             <th>
                 Hospital @Html.DisplayNameFor(model => model.Hospital.Adress)
             </th>
+            <th></th>
         </tr>
 
     </thead>
@@ -64,6 +65,8 @@
 </table>
 
 @section scripts{
+
+    <script src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function () {
             $("#doctorTables").DataTable();

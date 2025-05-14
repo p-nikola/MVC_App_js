@@ -25,8 +25,8 @@ namespace HospitalMVC.Models
 
         public virtual ICollection<Patient> Patients { get; set; }
 
-        [ForeignKey("Hospital")]
-        public int HospitalId { get; set; }
+        
+        public int ?HospitalId { get; set; }
         public virtual Hospital Hospital { get; set; }
 
     }

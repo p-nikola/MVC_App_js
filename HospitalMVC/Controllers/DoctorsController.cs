@@ -48,7 +48,7 @@ namespace HospitalMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Age,Gender,HospitalId")] Doctor doctor)
+        public ActionResult Create([Bind(Include = "Id,Name,Age,Gender")] Doctor doctor)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace HospitalMVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.HospitalId = new SelectList(db.Hospitals, "Id", "Name", doctor.HospitalId);
+            //ViewBag.HospitalId = new SelectList(db.Hospitals, "Id", "Name", doctor.HospitalId);
             return View(doctor);
         }
 

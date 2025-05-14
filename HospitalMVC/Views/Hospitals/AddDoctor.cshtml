@@ -1,0 +1,27 @@
+﻿@model HospitalMVC.Models.AddDoctorViewModel
+
+@{
+    ViewBag.Title = "Add Doctor";
+}
+
+<h2>Add Doctor to Hospital</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.HospitalId)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SelectedDoctorId, "Doctor", htmlAttributes: new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.SelectedDoctorId, new SelectList(Model.Doctors, "Id", "Name"), "-- Select Doctor --", htmlAttributes: new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Add Doctor" class="btn btn-primary" />
+    </div>
+}
+
+<p>
+    @Html.ActionLink("Back to Details", "Details", new { id = Model.HospitalId })
+</p>

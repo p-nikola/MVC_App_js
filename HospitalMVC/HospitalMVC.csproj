@@ -185,8 +185,17 @@
     <Compile Include="Migrations\202405192129095_added_Doctor_Patient.Designer.cs">
       <DependentUpon>202405192129095_added_Doctor_Patient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405200958481_added_doctor_hospital_model.cs" />
+    <Compile Include="Migrations\202405200958481_added_doctor_hospital_model.Designer.cs">
+      <DependentUpon>202405200958481_added_doctor_hospital_model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405201000211_MakeHospitalIdNullable.cs" />
+    <Compile Include="Migrations\202405201000211_MakeHospitalIdNullable.Designer.cs">
+      <DependentUpon>202405201000211_MakeHospitalIdNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddDoctor.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\DoctorPatient.cs" />
     <Compile Include="Models\Hospital.cs" />
@@ -522,6 +531,7 @@
     <Content Include="Views\Hospitals\Index.cshtml" />
     <Content Include="Views\Doctors\InsertNewPatient.cshtml" />
     <Content Include="Views\Patients\DetailsPatient.cshtml" />
+    <Content Include="Views\Hospitals\AddDoctor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -559,6 +569,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405192129095_added_Doctor_Patient.resx">
       <DependentUpon>202405192129095_added_Doctor_Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405200958481_added_doctor_hospital_model.resx">
+      <DependentUpon>202405200958481_added_doctor_hospital_model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405201000211_MakeHospitalIdNullable.resx">
+      <DependentUpon>202405201000211_MakeHospitalIdNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

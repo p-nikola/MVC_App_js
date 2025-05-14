@@ -102,10 +102,12 @@ C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\Hospita
 C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\HospitalMVC.csproj.AssemblyReference.cache
+C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\HospitalMVC.Migrations.initial.resources
+C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\HospitalMVC.Migrations.added_Doctor_Patient.resources
+C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\HospitalMVC.Migrations.added_doctor_hospital_model.resources
+C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\HospitalMVC.Migrations.MakeHospitalIdNullable.resources
+C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\HospitalMVC.csproj.GenerateResource.cache
 C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\HospitalMVC.csproj.CoreCompileInputs.cache
 C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\Hospital.1246CE39.Up2Date
 C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\HospitalMVC.dll
 C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\HospitalMVC.pdb
-C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\HospitalMVC.Migrations.initial.resources
-C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\HospitalMVC.csproj.GenerateResource.cache
-C:\Users\RazorVision\Nextcloud\uni\4 semestar\IT\zadaci\labs\lab3_grupaA\HospitalMVC\HospitalMVC\obj\Debug\HospitalMVC.Migrations.added_Doctor_Patient.resources

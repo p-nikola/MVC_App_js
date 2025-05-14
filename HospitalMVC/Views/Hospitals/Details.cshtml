@@ -33,9 +33,25 @@
         <dd>
             @Html.DisplayFor(model => model.ImageUrl)
         </dd>
-
     </dl>
 </div>
+
+<h3>Doctors</h3>
+<p>
+    @Html.ActionLink("Add an existing doctor", "AddDoctor", new { id = Model.Id }, null)
+</p>
+
+<ul>
+    @foreach (var doctor in Model.Doctors)
+    {
+        <li>
+            @Html.DisplayFor(modelItem => doctor.Name) (@Html.DisplayFor(modelItem => doctor.Age))
+            @Html.ActionLink("Details", "Details", "Doctors", new { id = doctor.Id }, null)
+            @Html.ActionLink("Remove", "RemoveDoctor", new { hospitalId = Model.Id, doctorId = doctor.Id }, new { @class = "text-danger" })
+        </li>
+    }
+</ul>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
